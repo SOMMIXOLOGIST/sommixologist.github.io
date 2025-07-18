@@ -9,66 +9,20 @@
         @page {
             margin: 0.5in;
             size: A4;
-            @top-left { content: ""; }
-            @top-center { content: ""; }
-            @top-right { content: ""; }
-            @bottom-left { content: ""; }
-            @bottom-center { content: ""; }
-            @bottom-right { content: ""; }
         }
-
+        
         @media print {
             * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            
-            html, body {
-                margin: 0 !important;
-                padding: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-            }
-            
-            body {
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
             }
             
             .header, .cert-item, .languages-section, .contact-section {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
                 background-color: #4a0e1e !important;
-            }
-            
-            .no-print, .print-footer, .browser-footer {
-                display: none !important;
             }
             
             .section {
                 page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-            
-            .competencies-grid {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-            
-            .experience-item {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-            
-            .certifications-grid {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-            
-            .section-title {
-                page-break-after: avoid !important;
-                break-after: avoid !important;
             }
         }
 
@@ -83,7 +37,6 @@
             background: linear-gradient(135deg, #f7f4e9 0%, #f0e6d2 30%, #e8dcc6 70%, #ddd0b8 100%);
             color: #1e3a5f;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
@@ -91,14 +44,9 @@
             margin: 0 auto;
             background: linear-gradient(45deg, #fefcf7 0%, #faf7f0 30%, #f5f1e8 70%, #f0ebe0 100%);
             box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
-            position: relative;
         }
 
         .desert-accent {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
             height: 8px;
             background: linear-gradient(90deg, #8b4513 0%, #d2691e 25%, #daa520 50%, #d2691e 75%, #8b4513 100%);
         }
@@ -108,35 +56,6 @@
             color: #f4f1e8;
             padding: 60px 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes breathe {
-            0%, 100% { 
-                opacity: 0.8;
-                transform: scale(1);
-            }
-            50% { 
-                opacity: 1;
-                transform: scale(1.02);
-            }
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -35%;
-            left: -35%;
-            width: 170%;
-            height: 170%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            animation: rotate 40s linear infinite;
         }
 
         .name {
@@ -145,12 +64,11 @@
             font-weight: 300;
             letter-spacing: 0.3em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 2;
             color: #d4af37;
-            animation: breathe 12s ease-in-out infinite;
             white-space: nowrap;
+            page-break-inside: avoid;
+            display: inline-block;
+            width: 100%;
         }
 
         .title {
@@ -159,16 +77,12 @@
             letter-spacing: 2px;
             margin-bottom: 10px;
             color: #d4af37;
-            position: relative;
-            z-index: 2;
         }
 
         .location {
             font-size: 1.1rem;
             color: #f4f1e8;
             opacity: 0.9;
-            position: relative;
-            z-index: 2;
         }
 
         .content {
@@ -177,7 +91,6 @@
 
         .section {
             margin-bottom: 50px;
-            position: relative;
         }
 
         .section-title {
@@ -188,22 +101,10 @@
             margin-bottom: 25px;
             padding-bottom: 10px;
             border-bottom: 2px solid #d4af37;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, #8b4513, #d4af37);
         }
 
         .professional-summary {
             font-size: 1.1rem;
-            text-align: justify;
             line-height: 1.8;
             color: #1e3a5f;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
@@ -243,12 +144,6 @@
             padding: 25px;
             border-radius: 8px;
             border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .competency-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.1);
         }
 
         .competency-title {
@@ -257,12 +152,6 @@
             font-weight: 600;
             color: #1e3a5f;
             margin-bottom: 12px;
-        }
-
-        .competency-desc {
-            font-size: 1rem;
-            color: #1e3a5f;
-            line-height: 1.6;
         }
 
         .competency-desc ul {
@@ -291,12 +180,6 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(244, 241, 232, 0.6) 100%);
             border-radius: 12px;
             border-left: 6px solid #d4af37;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
         }
 
         .company-name {
@@ -343,34 +226,12 @@
             gap: 20px;
         }
 
-        .cert-item:nth-child(10) {
-            grid-column: 2;
-        }
-
         .cert-item {
             background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
             color: #f4f1e8;
             padding: 25px;
             border-radius: 8px;
             text-align: center;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-            animation: rotate 25s linear infinite;
-        }
-
-        .cert-item:hover {
-            transform: scale(1.05);
         }
 
         .cert-title {
@@ -379,13 +240,6 @@
             font-weight: 600;
             color: #d4af37;
             margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .cert-item > div:last-child {
-            position: relative;
-            z-index: 2;
         }
 
         .languages-section {
@@ -393,43 +247,40 @@
             color: #f4f1e8;
             padding: 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
             border-radius: 12px;
             margin-top: 30px;
         }
 
-        .languages-section::before {
-            content: '';
-            position: absolute;
-            top: -35%;
-            left: -35%;
-            width: 170%;
-            height: 170%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+        .languages-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .nationality-grid, .language-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .nationality-item, .language-item {
+            text-align: center;
+            padding: 12px 20px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            min-width: 100px;
         }
 
         .contact-section {
             background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
             color: #f4f1e8;
-            padding: 60px 40px;
+            padding: 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
             border-radius: 12px;
             margin-top: 30px;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: -35%;
-            left: -35%;
-            width: 170%;
-            height: 170%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            animation: rotate 40s linear infinite;
         }
 
         .contact-title {
@@ -437,29 +288,19 @@
             font-size: 1.4rem;
             font-weight: 600;
             color: #d4af37;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 20px;
         }
 
         .contact-info {
             font-size: 1.1rem;
             color: #f4f1e8;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
             .name {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 letter-spacing: 0.1em;
-                line-height: 1.1;
-            }
-            
-            .title {
-                font-size: 1.1rem;
-                letter-spacing: 1px;
             }
             
             .content {
@@ -470,36 +311,15 @@
                 padding: 40px 20px;
             }
         }
-
-        @media (max-width: 480px) {
-            .name {
-                font-size: 1.8rem;
-                letter-spacing: 0.1em;
-            }
-            
-            .title {
-                font-size: 1rem;
-                letter-spacing: 0.5px;
-            }
-            
-            .header {
-                padding: 30px 15px;
-            }
-            
-            .content {
-                padding: 20px 15px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="desert-accent"></div>
-
+        
         <div class="header">
             <h1 class="name">KHALED EL SHERBINI</h1>
-            <p class="title">SOMMIXOLOGIST</p>
-            <p class="location">Melbourne</p>
+            <p class="title">THE SOMMIXOLOGIST</p>
         </div>
 
         <div class="content">
@@ -507,7 +327,7 @@
                 <h2 class="section-title">INTRO</h2>
                 <div class="professional-summary">
                     <ul>
-                        <li>Over 25 years international culinary operations experience</li>
+                        <li>Over 25 years of international culinary operations experience</li>
                         <li>WSET Level 3 certified - overall merit and distinction in theory</li>
                         <li>Sommellerie & mixology demonstrated by Sherbini Bar's 310+ 5-star reviews</li>
                     </ul>
@@ -521,16 +341,11 @@
                         <div class="competency-title">Sommellerie</div>
                         <div class="competency-desc">
                             <ul>
-                                <li>Curated and managed wine programs featuring 200+ labels with price range $55-$2500 AUD, emphasizing natural and organic selections</li>
+                                <li>Curated and managed wine programs featuring 200 labels with price range $55-$2500 AUD</li>
                                 <li>Cellar management of 1500 bottles with 25% inventory turnover optimization</li>
                                 <li>Refined sensory and tasting skills for wine evaluation and selection excellence</li>
-                                <li>Emotional intelligence in guest relations and personalized recommendation expertise</li>
-                                <li>Precision in wine service and cellar presentation standards</li>
-                                <li>Trained 8 staff members in wine service excellence, resulting in 30% increase in wine sales per cover</li>
+                                <li>Trained 8 staff members in wine service excellence, resulting in 30% increase in wine sales</li>
                                 <li>Developed wine pairing menus that increased guest spend by 30%</li>
-                                <li>Wine education and guest advisory services for 80 covers per service period</li>
-                                <li>Established relationships with up to 20 wine companies and growers for premium sourcing</li>
-                                <li>Capability to scale wine operations from boutique to large establishments</li>
                             </ul>
                         </div>
                     </div>
@@ -541,8 +356,27 @@
                                 <li>Comprehensive knowledge of spirits, liqueurs, and flavor profile interactions</li>
                                 <li>Precision in execution and consistency standards</li>
                                 <li>Creative innovation in signature cocktail development and presentation</li>
-                                <li>Scientific approach to ingredient infusions, syrups, and garnish creation</li>
-                                <li>Multitasking and organizational excellence in high-volume service</li>
+                                <li>Innovative approach to ingredient infusions, syrups, and garnish creation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">International Wine Travels</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>6 years California wine culture immersion</li>
+                                <li>Southern France</li>
+                                <li>Spain</li>
+                                <li>Italy</li>
+                                <li>Germany</li>
+                                <li>Japan</li>
+                                <li>Mexico</li>
+                                <li>Argentina</li>
+                                <li>Malaysia</li>
+                                <li>Morocco</li>
+                                <li>India</li>
+                                <li>Egypt</li>
+                                <li>Vietnam</li>
                             </ul>
                         </div>
                     </div>
@@ -565,7 +399,6 @@
                                 <li>International and local organic sourcing</li>
                                 <li>Sustainable ingredient integration</li>
                                 <li>Trademark development of innovative concepts like 'FalaFries'</li>
-                                <li>Unique plant-based desserts</li>
                             </ul>
                         </div>
                     </div>
@@ -573,13 +406,10 @@
                         <div class="competency-title">Operations & Management</div>
                         <div class="competency-desc">
                             <ul>
-                                <li>P&L oversight</li>
-                                <li>Operations and management</li>
-                                <li>Restaurant launch and management</li>
+                                <li>P&L oversight and restaurant operations</li>
                                 <li>High-volume service excellence</li>
-                                <li>Vendor relationship management</li>
-                                <li>Inventory control</li>
                                 <li>Staff training and mentorship</li>
+                                <li>Inventory control and vendor management</li>
                             </ul>
                         </div>
                     </div>
@@ -590,53 +420,52 @@
                 <h2 class="section-title">EXPERIENCE</h2>
                 
                 <div class="experience-item">
-                    <div class="company-name">Blue Dragon<br>Ultra Premium Organics</div>
+                    <div class="company-name">Blue Dragon Ultra Premium Organics</div>
                     <div class="position">Founder & Managing Director</div>
                     <div class="dates">December 2024 – Present | Da Nang, Vietnam</div>
-                    <div class="achievement">Established and currently lead a new venture focused on exclusive licensing of ultra-premium organic food products from Vietnam's artisanal organic and sustainable producers worldwide. The fully certified organic product portfolio includes Organic Teas, Fleur de Sel, Spices, Palmyra Nectar, Rice, Cashew Nuts, Jaggery, Fruit, Vegetables & Medicinal Rare Mushrooms</div>
+                    <div class="achievement">Established and currently lead a new venture focused on exclusive licensing of ultra-premium organic food products from Vietnam's artisanal organic and sustainable producers worldwide</div>
                 </div>
 
                 <div class="experience-item">
                     <div class="company-name">Sherbini Bar</div>
                     <div class="position">Head Sommixologist</div>
                     <div class="dates">2020 – 2025 | Northcote, Melbourne, Australia</div>
-                    <div class="achievement">Curated and managed wine programs featuring 200 carefully selected labels $55-$2500 AUD</div>
-                    <div class="achievement">Trained 4 staff members in advanced wine knowledge and service techniques, resulting in 25% improvement in wine upselling</div>
+                    <div class="achievement">Curated natural and organic wine program featuring 200+ labels at $55-$2500 AUD</div>
+                    <div class="achievement">Trained 8 staff in wine service excellence, resulting in 30% increase in wine sales</div>
                     <div class="achievement">Led beverage operations serving 50-75 covers per night, maintaining exceptional service standards</div>
-                    <div class="achievement">Collaborated with local producers to source unique organic ingredients, supporting sustainable wine and beverage program development</div>
+                    <div class="achievement">Developed original cocktails that have a loyal following</div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="company-name">Pharaoh<br>Modern Egyptian Restaurant</div>
+                    <div class="company-name">Pharaoh Modern Egyptian Restaurant</div>
                     <div class="position">Founder & Sommixologist</div>
                     <div class="dates">2016 – 2019 | Australia</div>
-                    <div class="achievement">Conceived, launched, and operated a pioneering modern Egyptian restaurant, elevating traditional home cooking to a casual fine dining experience.</div>
-                    <div class="achievement">Created and trademarked signature dishes like 'FalaFries' (falafel shaped like French fries) and innovative black hummus with black sesame tahini.</div>
-                    <div class="achievement">Developed and implemented wine pairing programs for 8-course tasting menus, increasing average guest spend by 30%</div>
-                    <div class="achievement">Managed wine inventory of 1500 bottles with 25% turnover rate, optimizing cellar operations and reducing waste</div>
-                    <div class="achievement">Designed a versatile menu, plant-based at its core, offering flexibility with optional meat, chicken, or cheese add-ons to appeal to diverse dietary preferences.</div>
-                    <div class="achievement">Innovated vegan desserts, reimagining classic Egyptian sweets like rice pudding and feteer using cashew and almond milk.</div>
-                    <div class="achievement">Sourced and utilized Palmyra nectar from Vietnam as a low-glycemic, nutrient-rich natural sweetener, replacing refined sugars completely.</div>
-                    <div class="achievement">Elevated Egyptian mint tea by exclusively using premium organic black tea from Sơn La, Vietnam, creating a memorable beverage offering experience.</div>
+                    <div class="achievement">Conceived, launched, and operated a pioneering modern Egyptian restaurant with total team of 12</div>
+                    <div class="achievement">Curated food-pairing focused wine program featuring 150+ labels at $45-$1500 AUD</div>
+                    <div class="achievement">Created and trademarked signature dishes like 'FalaFries' and innovative black hummus, driving increased beverage sales through exceptional food quality</div>
+                    <div class="achievement">Developed wine pairing programs for 8-course tasting menus, increasing guest spend by 30%</div>
+                    <div class="achievement">Managed wine inventory of over 200 labels and 1500 bottles with 25% turnover rate optimization</div>
+                    <div class="achievement">Created avant-garde Egyptian-inspired cocktail program</div>
                 </div>
 
                 <div class="experience-item">
                     <div class="company-name">Papasito Organic Mexican</div>
                     <div class="position">Founder & Sommixologist</div>
                     <div class="dates">2011 – 2015 | Australia</div>
-                    <div class="achievement">Opened and managed Australia's first organic Mexican eatery</div>
-                    <div class="achievement">Championed authenticity and quality by ensuring absolutely everything was made in-house including no canned foods, pre-made salsas, or mixes</div>
-                    <div class="achievement">Maintained unparalleled quality by hand-pressing and cooking over 40,000 tortillas in-house across five operational years continuously</div>
+                    <div class="achievement">Opened and managed Australia's first organic Mexican eatery with a total team of 10</div>
+                    <div class="achievement">Curated approachable fine wine program featuring 100+ labels at $45-$950 AUD</div>
+                    <div class="achievement">Managed wine inventory of over 100 labels and 1000 bottles with 20% turnover rate optimization</div>
+                    <div class="achievement">Created a sensational Tequila and Mezcal Cocktail menu that is still the talk of the town</div>
+                    <div class="achievement">Hand-pressed over 40,000 tortillas ensuring exceptional food quality that kept Margaritas and Micheladas flowing</div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="company-name">Coco Loco<br>Organic Chocolate & Dessert Bar</div>
+                    <div class="company-name">Coco Loco Organic Chocolate & Dessert Bar</div>
                     <div class="position">Founder & Head Chocolatier</div>
                     <div class="dates">1999 – 2010 | Australia</div>
-                    <div class="achievement">Established an avant-garde chocolate and dessert bar, pioneering vegan and plant-based desserts in Australia as early as 1999.</div>
-                    <div class="achievement">Handcrafted all products using the finest organic ingredients, specializing in a rich, creamy cashew milk ganache that formed the heart of many desserts and chocolates.</div>
-                    <div class="achievement">Became renowned for its signature hot chocolate program, notably featuring cashew milk.</div>
-                    <div class="achievement">Led the market segment for organic and plant-based desserts, establishing Coco Loco as a phenomenon and industry leader.</div>
+                    <div class="achievement">Established an iconic chocolate and dessert bar, pioneering vegan and plant-based desserts in Australia with total team of 8</div>
+                    <div class="achievement">Developed signature hot chocolate and dessert wine pairing programs</div>
+                    <div class="achievement">Created innovative cashew-based dessert and beverage offerings</div>
                 </div>
             </div>
 
@@ -689,40 +518,38 @@
             <div class="section">
                 <h2 class="section-title">LANGUAGES & NATIONALITIES</h2>
                 <div class="languages-section">
-                    <div style="position: relative; z-index: 2;">
-                        <div style="margin-bottom: 30px;">
-                            <h3 style="font-family: 'Bodoni Moda', serif; font-size: 1.3rem; color: #d4af37; margin-bottom: 15px;">Nationalities</h3>
-                            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                                <div style="text-align: center; padding: 12px 20px; background: rgba(212, 175, 55, 0.15); border-radius: 8px; min-width: 100px;">
-                                    <div style="font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 600; color: #d4af37;">Australia</div>
-                                </div>
-                                <div style="text-align: center; padding: 12px 20px; background: rgba(212, 175, 55, 0.15); border-radius: 8px; min-width: 100px;">
-                                    <div style="font-family: 'Bodoni Moda', serif; font-size: 1rem; font-weight: 600; color: #d4af37;">United States</div>
-                                </div>
+                    <div>
+                        <h3 class="languages-title">Nationalities</h3>
+                        <div class="nationality-grid">
+                            <div class="nationality-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">Australia</div>
+                            </div>
+                            <div class="nationality-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">United States</div>
                             </div>
                         </div>
-                        <div>
-                            <h3 style="font-family: 'Bodoni Moda', serif; font-size: 1.3rem; color: #d4af37; margin-bottom: 15px;">Languages</h3>
-                            <div style="display: flex; gap: 30px; justify-content: center;">
-                                <div style="text-align: center; padding: 15px 25px; background: rgba(212, 175, 55, 0.15); border-radius: 8px; min-width: 120px;">
-                                    <div style="font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 600; color: #d4af37; margin-bottom: 5px;">English</div>
-                                    <div style="color: #f4f1e8; font-size: 1rem;">Fluent</div>
-                                </div>
-                                <div style="text-align: center; padding: 15px 25px; background: rgba(212, 175, 55, 0.15); border-radius: 8px; min-width: 120px;">
-                                    <div style="font-family: 'Bodoni Moda', serif; font-size: 1.1rem; font-weight: 600; color: #d4af37; margin-bottom: 5px;">Arabic</div>
-                                    <div style="color: #f4f1e8; font-size: 1rem;">Fluent</div>
-                                </div>
+                        
+                        <h3 class="languages-title">Languages</h3>
+                        <div class="language-grid">
+                            <div class="language-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">English</div>
+                                <div style="color: #f4f1e8;">Fluent</div>
+                            </div>
+                            <div class="language-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">Arabic</div>
+                                <div style="color: #f4f1e8;">Fluent</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section-title">CONTACT</h2>
-                <div class="contact-section">
-                    <div class="contact-title">Phone</div>
-                    <div class="contact-info">0415-492-762</div>
-                    <div class="contact-title">Email</div>
-                    <div class="contact-info">khaled@sommixology.com</div>
-                    <div class="contact-info" style="margin-top: 20px; font-style: italic;">References Available Upon Request
+            <div class="contact-section">
+                <h2 class="contact-title">CONTACT</h2>
+                <div class="contact-info">📱 0415-492-762</div>
+                <div class="contact-info">✉️ Khaled@sommixology.com</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

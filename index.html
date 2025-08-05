@@ -1,339 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khaled El Sherbini - The Sommixologist</title>
-<style>
-  body {
-    font-family: 'Georgia', serif;
-    line-height: 1.6;
-    color: #2c3e50;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f9f9f9;
-  }
-  h1 {
-    color: #c0392b;
-    font-size: 2.5em;
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  .tagline {
-    text-align: center;
-    font-size: 1.3em;
-    color: #34495e;
-    font-style: italic;
-    margin-bottom: 30px;
-  }
-  .contact-with-qr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-  }
-  .contact-info {
-    flex: 1;
-    font-size: 1.1em;
-  }
-  .qr-section {
-    text-align: center;
-    margin-left: 20px;
-  }
-  .qr-code {
-    border: 2px solid #c0392b;
-    border-radius: 4px;
-  }
-  .qr-label {
-    font-size: 0.8em;
-    color: #7f8c8d;
-    margin-top: 5px;
-  }
-  .heritage {
-    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #c0392b;
-    margin-bottom: 30px;
-    font-size: 1.05em;
-    line-height: 1.7;
-  }
-  .heritage-title {
-    font-weight: 600;
-    color: #c0392b;
-    margin-bottom: 15px;
-    font-size: 1.1em;
-  }
-  .section {
-    background: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  h2 {
-    color: #c0392b;
-    font-size: 1.4em;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #ecf0f1;
-  }
-  .job-header {
-    margin-bottom: 15px;
-  }
-  .job-title {
-    font-weight: 600;
-    font-size: 1.1em;
-    color: #2c3e50;
-    float: left;
-  }
-  .job-dates {
-    font-style: italic;
-    color: #7f8c8d;
-    float: right;
-  }
-  .clear {
-    clear: both;
-  }
-  .job-company {
-    color: #34495e;
-    font-size: 1em;
-    margin-top: 5px;
-  }
-  ul {
-    margin: 15px 0;
-    padding-left: 20px;
-  }
-  li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-  .achievement-highlight {
-    background: linear-gradient(120deg, #fff3cd 0%, transparent 100%);
-    padding: 2px 4px;
-    border-radius: 3px;
-  }
-  .highlight {
-    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid #c0392b;
-    margin: 20px 0;
-  }
-  strong {
-    color: #2c3e50;
-  }
-  .value-prop {
-    background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #c0392b;
-  }
-  .value-title {
-    font-weight: 600;
-    color: #c0392b;
-    margin-bottom: 15px;
-    font-size: 1.05em;
-  }
-  .value-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  .value-list li {
-    margin-bottom: 12px;
-    padding-left: 20px;
-    position: relative;
-  }
-  .value-list li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #c0392b;
-    font-weight: bold;
-  }
-  .value-point-title {
-    font-weight: 500;
-    color: #2c3e50;
-  }
-  @media print {
-    body {
-      margin: 15mm;
-      background: white;
-      font-size: 11pt;
-    }
-    .section {
-      box-shadow: none;
-      border: 1px solid #ddd;
-    }
-    a {
-      color: black;
-      text-decoration: underline;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled El Sherbini - International Sommelier & Executive Chef</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            margin: 0.5in;
+            size: A4;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .header, .cert-item, .languages-section, .contact-section {
+                background-color: #4a0e1e !important;
+            }
+            
+            .section {
+                page-break-inside: avoid !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #f7f4e9 0%, #f0e6d2 30%, #e8dcc6 70%, #ddd0b8 100%);
+            color: #1e3a5f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #fefcf7 0%, #faf7f0 30%, #f5f1e8 70%, #f0ebe0 100%);
+            box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+        }
+
+        .desert-accent {
+            height: 8px;
+            background: linear-gradient(90deg, #8b4513 0%, #d2691e 25%, #daa520 50%, #d2691e 75%, #8b4513 100%);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
+            color: #f4f1e8;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .name {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            color: #d4af37;
+            white-space: nowrap;
+            page-break-inside: avoid;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .location {
+            font-size: 1.1rem;
+            color: #f4f1e8;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .professional-summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #1e3a5f;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .professional-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .professional-summary li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .professional-summary li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #1e3a5f;
+            font-weight: bold;
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .competency-item {
+            background: linear-gradient(135deg, rgba(244, 241, 232, 0.8) 0%, rgba(232, 220, 192, 0.8) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .competency-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .competency-desc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .competency-desc li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .competency-desc li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #1e3a5f;
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(244, 241, 232, 0.6) 100%);
+            border-radius: 12px;
+            border-left: 6px solid #d4af37;
+        }
+
+        .company-name {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .position {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 8px;
+        }
+
+        .dates {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .achievement {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #1e3a5f;
+            font-size: 1rem;
+        }
+
+        .achievement::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #1e3a5f;
+            font-weight: bold;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
+            color: #f4f1e8;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cert-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        .languages-section {
+            background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
+            color: #f4f1e8;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .languages-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .nationality-grid, .language-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .nationality-item, .language-item {
+            text-align: center;
+            padding: 12px 20px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 8px;
+            min-width: 100px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #4a0e1e 0%, #2d0611 100%);
+            color: #f4f1e8;
+            padding: 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .contact-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #f4f1e8;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="desert-accent"></div>
+        
+        <div class="header">
+            <h1 class="name">KHALED EL SHERBINI</h1>
+            <p class="title">SOMMIXOLOGIST</p>
+        </div>
 
-<h1>Khaled El Sherbini</h1>
-<div class="tagline">The Sommixologist</div>
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">INTRO</h2>
+                <div class="professional-summary">
+                    <ul>
+                        <li>Over 25 years of international culinary operations experience</li>
+                        <li>WSET Level 3 certified - DISTINCTION</li>
+                        <li>Championed a hospitality culture at Sherbini Bar that attracted 310+ 5-star reviews, reflecting exceptional attention to detail, wine knowledge, and guest satisfaction</li>
+                    </ul>
+                </div>
+            </div>
 
-<div class="contact-with-qr">
-  <div class="contact-info">
-    📱 0415-492-762 | ✉️ <a href="mailto:khaled@sommixology.com">khaled@sommixology.com</a><br />
-    LinkedIn: <a href="https://linkedin.com/in/khaledelsherbini" target="_blank">linkedin.com/in/khaledelsherbini</a>
-  </div>
-  <div class="qr-section">
-    <a href="https://sommixologist.github.io" target="_blank" title="View Portfolio Online">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=75x75&data=https://sommixologist.github.io" alt="QR Code to Portfolio" class="qr-code">
-    </a>
-    <div class="qr-label">Portfolio Access</div>
-  </div>
-</div>
+            <div class="section">
+                <h2 class="section-title">CORE</h2>
+                <div class="competencies-grid">
+                    <div class="competency-item">
+                        <div class="competency-title">Sommellerie</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>Curated and managed wine programs featuring 200 labels with price range $55-$2500 AUD</li>
+                                <li>Cellar management of 1500 bottles with 25% inventory turnover optimization</li>
+                                <li>Refined sensory and tasting skills for wine evaluation and selection excellence</li>
+                                <li>Trained 8 staff members in wine service excellence, resulting in 30% increase in wine sales</li>
+                                <li>Developed wine pairing menus that increased guest spend by 30%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">Mixology</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>Comprehensive knowledge of spirits, liqueurs, and flavor profile interactions</li>
+                                <li>Precision in execution and consistency standards</li>
+                                <li>Creative innovation in signature cocktail development and presentation</li>
+                                <li>Innovative approach to ingredient infusions, syrups, and garnish creation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">International Wine Travels</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>6 years California wine culture immersion</li>
+                                <li>Southern France</li>
+                                <li>Spain</li>
+                                <li>Italy</li>
+                                <li>Germany</li>
+                                <li>Japan</li>
+                                <li>Mexico</li>
+                                <li>Argentina</li>
+                                <li>Malaysia</li>
+                                <li>Morocco</li>
+                                <li>India</li>
+                                <li>Egypt</li>
+                                <li>Vietnam</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">Food & Wine Pairing</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>Wines with global culinary styles</li>
+                                <li>Wine and cheese pairings</li>
+                                <li>Wine, spirit and chocolate pairings</li>
+                                <li>Guest education in flavor profiles and pairing principles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">Culinary Arts & Innovation</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>Signature menu development</li>
+                                <li>International and local organic sourcing</li>
+                                <li>Sustainable ingredient integration</li>
+                                <li>Trademark development of innovative concepts like 'FalaFries'</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competency-item">
+                        <div class="competency-title">Operations & Management</div>
+                        <div class="competency-desc">
+                            <ul>
+                                <li>P&L oversight and restaurant operations</li>
+                                <li>High-volume service excellence</li>
+                                <li>Staff training and mentorship</li>
+                                <li>Inventory control and vendor management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="heritage">
-  <div class="heritage-title">Hospitality Heritage</div>
-  Born into three generations of hospitality excellence, my culinary journey began at age 8 when I operated the executive grill during Ritz Carlton Egypt management retreats. Under the mentorship of my mother, Aisha Sherbini (Food & Beverage Director), and seasoned executive chefs, I mastered the precision of preparing 200+ filet mignon per service in high-stakes fine dining environments.
-  <br><br>
-  Deeply rooted in authentic Egyptian culinary culture, I was raised where the grill was central to family tradition and celebration. Throughout my teens, I advanced my skills in genuine Egyptian techniques and traditional charcoal methods using half-barrel setups. This heritage forms the foundation of my understanding of fire, flavor, and the intersection of cooking and wine.
-</div>
+            <div class="section">
+                <h2 class="section-title">EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="company-name">Blue Dragon Ultra Premium Organics</div>
+                    <div class="position">Founder & Managing Director</div>
+                    <div class="dates">December 2024 – Present | Da Nang, Vietnam</div>
+                    <div class="achievement">Established and currently lead a new venture focused on exclusive licensing of ultra-premium organic food products from Vietnam's artisanal organic and sustainable producers worldwide</div>
+                </div>
 
-<div class="section">
-  <h2>Professional Summary</h2>
-  <p>
-    <strong>THE SOMMIXOLOGIST</strong> combining 25+ years of international hospitality mastery with childhood culinary training under Ritz Carlton executive chefs. Certified WSET Level 3 with <strong>DISTINCTION</strong>, specializing in wine program development for modern cuisine. Proven track record of managing award-winning beverage programs, developing wine lists that complement contemporary cooking methods, and leading high-performing sommelier teams. Expert in the science of flavor interaction and wine perception, with deep knowledge of culinary traditions and modern wine culture.
-  </p>
-</div>
+                <div class="experience-item">
+                    <div class="company-name">Sherbini Bar</div>
+                    <div class="position">Head Sommixologist</div>
+                    <div class="dates">2020 – 2025 | Northcote, Melbourne, Australia</div>
+                    <div class="achievement">Curated natural and organic wine program featuring 200+ labels at $55-$2500 AUD</div>
+                    <div class="achievement">Trained 8 staff in wine service excellence, resulting in 30% increase in wine sales</div>
+                    <div class="achievement">Led beverage operations serving 50-75 covers per night, maintaining exceptional service standards</div>
+                    <div class="achievement">Developed original cocktails that have a loyal following</div>
+                </div>
 
-<div class="section">
-  <h2>Core Competencies</h2>
-  <ul>
-    <li><strong>Wine Program Management:</strong> 200+ label curation, cellar management, inventory optimization</li>
-    <li><strong>Team Leadership:</strong> Sommelier training, staff development, operational management</li>
-    <li><strong>Revenue Growth:</strong> P&L accountability, cost control, profit optimization</li>
-    <li><strong>Guest Experience:</strong> Service excellence, wine education, hospitality culture</li>
-    <li><strong>Mixology Mastery:</strong> Signature cocktail development, spirit knowledge, flavor innovation</li>
-    <li><strong>Cultural Expertise:</strong> International wine regions, diverse culinary traditions, authentic techniques</li>
-  </ul>
-</div>
+                <div class="experience-item">
+                    <div class="company-name">Pharaoh Modern Egyptian Restaurant</div>
+                    <div class="position">Founder & Sommixologist</div>
+                    <div class="dates">2016 – 2019 | Australia</div>
+                    <div class="achievement">Conceived, launched, and operated a pioneering modern Egyptian restaurant with total team of 12</div>
+                    <div class="achievement">Curated food-pairing focused wine program featuring 150+ labels at $45-$1500 AUD</div>
+                    <div class="achievement">Created and trademarked signature dishes like 'FalaFries' and innovative black hummus, driving increased beverage sales through exceptional food quality</div>
+                    <div class="achievement">Developed wine pairing programs for 8-course tasting menus, increasing guest spend by 30%</div>
+                    <div class="achievement">Managed wine inventory of over 200 labels and 1500 bottles with 25% turnover rate optimization</div>
+                    <div class="achievement">Created avant-garde Egyptian-inspired cocktail program</div>
+                </div>
 
-<div class="section">
-  <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="company-name">Papasito Organic Mexican</div>
+                    <div class="position">Founder & Sommixologist</div>
+                    <div class="dates">2011 – 2015 | Australia</div>
+                    <div class="achievement">Opened and managed Australia's first organic Mexican eatery with a total team of 10</div>
+                    <div class="achievement">Curated approachable fine wine program featuring 100+ labels at $45-$950 AUD</div>
+                    <div class="achievement">Managed wine inventory of over 100 labels and 1000 bottles with 20% turnover rate optimization</div>
+                    <div class="achievement">Created a sensational Tequila and Mezcal Cocktail menu that is still the talk of the town</div>
+                    <div class="achievement">Hand-pressed over 40,000 tortillas ensuring exceptional food quality that kept Margaritas and Micheladas flowing</div>
+                </div>
 
-  <div class="job-header">
-    <div class="job-title">Founder & Managing Director</div>
-    <div class="job-dates">January 2025 – Present</div>
-    <div class="clear"></div>
-    <div class="job-company">Blue Dragon Ultra Premium Organics — Da Nang, Vietnam</div>
-  </div>
-  <ul>
-    <li>Lead comprehensive business operations including financial planning, budgeting, and strategic supplier partnerships for premium organic food products</li>
-    <li>Spearhead sustainable sourcing initiatives and manage cross-functional teams to drive brand growth and market expansion</li>
-    <li>Develop strategic partnerships with Vietnamese artisanal producers for international distribution networks</li>
-    <li>Oversee quality assurance protocols and certification processes for ultra-premium organic product portfolio</li>
-  </ul>
+                <div class="experience-item">
+                    <div class="company-name">Coco Loco Organic Chocolate & Dessert Bar</div>
+                    <div class="position">Founder & Head Chocolatier</div>
+                    <div class="dates">1999 – 2010 | Australia</div>
+                    <div class="achievement">Established an iconic chocolate and dessert bar, pioneering vegan and plant-based desserts in Australia with total team of 8</div>
+                    <div class="achievement">Developed signature hot chocolate and dessert wine pairing programs</div>
+                    <div class="achievement">Created innovative cashew-based dessert and beverage offerings</div>
+                </div>
+            </div>
 
-  <div class="job-header">
-    <div class="job-title">Head Sommixologist & Beverage Director</div>
-    <div class="job-dates">2020 – 2025</div>
-    <div class="clear"></div>
-    <div class="job-company">Sherbini Bar — Northcote, Melbourne, Australia</div>
-  </div>
-  <ul>
-    <li><strong>Championed hospitality culture that attracted 310+ five-star reviews</strong>, reflecting exceptional attention to detail, wine knowledge, and guest satisfaction</li>
-    <li>Directed beverage operations with full P&L accountability, achieving consistent 15% annual profit growth on $500K+ budget</li>
-    <li>Curated natural and organic wine program featuring 200+ labels ($55-$2500 AUD) with 25% inventory turnover optimization</li>
-    <li>Created original signature cocktails with loyal following, enhancing brand identity and increasing bar revenue by 25%</li>
-    <li><strong>Led and trained team of 8 sommeliers, bartenders, and support staff</strong> with comprehensive training programs achieving minimal staff turnover</li>
-    <li>Introduced data-driven stock control systems, reducing waste by 15% and improving operational efficiency</li>
-    <li>Maintained spotless compliance record with liquor licensing and health regulations throughout operations</li>
-  </ul>
+            <div class="section">
+                <h2 class="section-title">SUMMARY</h2>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <div class="cert-title">Art of Hospitality</div>
+                        <div>25+ Years</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">WSET Level 3</div>
+                        <div>Overall <strong>MERIT</strong><br><strong>DISTINCTION</strong> in Theory</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Global Wine Knowledge</div>
+                        <div>Extensive</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Wine List Curation</div>
+                        <div>On-Trend With Wide Appeal</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Food & Wine Pairing</div>
+                        <div>Mastery</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Original Cocktails</div>
+                        <div>Mastery</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Premium Spirits Knowledge</div>
+                        <div>Across the Board</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Culinary Recipe Development</div>
+                        <div>Effortless</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Dessert Innovation</div>
+                        <div>On-Trend Plant-Based</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Vietnamese Sourcing</div>
+                        <div>Premium Organic Ingredients</div>
+                    </div>
+                </div>
+            </div>
 
-  <div class="job-header">
-    <div class="job-title">Founder & Executive Sommixologist</div>
-    <div class="job-dates">2016 – 2019</div>
-    <div class="clear"></div>
-    <div class="job-company">Pharaoh Modern Egyptian Restaurant — Australia</div>
-  </div>
-  <ul>
-    <li>Conceived, launched, and operated pioneering modern Egyptian restaurant with total team of 12 staff members</li>
-    <li><span class="achievement-highlight">Applied Egyptian culinary heritage to modern restaurant operations</span> with contemporary presentation</li>
-    <li>Curated food-pairing focused wine program featuring 150+ labels ($45-$1500 AUD) with 25% turnover optimization</li>
-    <li>Created and trademarked signature dishes including 'FalaFries' and innovative black hummus, driving 30% beverage sales increase</li>
-    <li>Developed avant-garde Egyptian-inspired cocktail program complementing wine selection and enhancing guest engagement</li>
-    <li>Held full P&L responsibility for beverage operations on $350K annual budget, negotiating premium supplier contracts</li>
-    <li>Streamlined inventory and procurement workflows, reducing stock losses by 12% through improved systems</li>
-  </ul>
+            <div class="section">
+                <h2 class="section-title">LANGUAGES & NATIONALITIES</h2>
+                <div class="languages-section">
+                    <div>
+                        <h3 class="languages-title">Nationalities</h3>
+                        <div class="nationality-grid">
+                            <div class="nationality-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">Australia</div>
+                            </div>
+                            <div class="nationality-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">United States</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="languages-title">Languages</h3>
+                        <div class="language-grid">
+                            <div class="language-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">English</div>
+                                <div style="color: #f4f1e8;">Fluent</div>
+                            </div>
+                            <div class="language-item">
+                                <div style="font-family: 'Bodoni Moda', serif; font-weight: 600; color: #d4af37;">Arabic</div>
+                                <div style="color: #f4f1e8;">Fluent</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <div class="job-header">
-    <div class="job-title">Founder & Executive Sommixologist</div>
-    <div class="job-dates">2011 – 2015</div>
-    <div class="clear"></div>
-    <div class="job-company">Papasito Organic Mexican — Australia</div>
-  </div>
-  <ul>
-    <li>Opened and managed Australia's first organic Mexican eatery with total team of 10 staff members</li>
-    <li>Curated approachable yet sophisticated wine program featuring organic and biodynamic selections from Mexico and South America</li>
-    <li>Hand-pressed over 40,000 tortillas using traditional preparation methods, maintaining ingredient integrity</li>
-    <li>Developed comprehensive training protocols for authentic Mexican preparation methods and wine service standards</li>
-    <li>Achieved consistent profitability through operational excellence and authentic culinary innovation</li>
-  </ul>
-
-  <div class="job-header">
-    <div class="job-title">Founder & Executive Chef</div>
-    <div class="job-dates">1999 – 2010</div>
-    <div class="clear"></div>
-    <div class="job-company">Coco Loco Organic Dessert Bar — Australia</div>
-  </div>
-  <ul>
-    <li>Pioneered plant-based dessert and beverage bar, introducing vegan and plant-based desserts to Australia as early as 1999</li>
-    <li><strong>Developed signature hot chocolate and dessert wine pairing programs</strong> that elevated customer experience and established new market segment</li>
-    <li>Created innovative cashew-based dessert and beverage offerings, contributing to consistent 20% annual revenue growth</li>
-    <li>Managed comprehensive operations including inventory control, supplier negotiations, and staff training programs</li>
-    <li>Implemented cost control measures and quality assurance protocols, maintaining profitability and product excellence throughout operations</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>Professional Value Proposition</h2>
-  <div class="value-prop">
-    <div class="value-title">WHAT I BRING TO YOUR WINE PROGRAM:</div>
-    <ul class="value-list">
-      <li><span class="value-point-title">Heritage Excellence:</span> Deep understanding of culinary traditions with modern wine program development expertise</li>
-      <li><span class="value-point-title">Proven Leadership:</span> Demonstrated ability to lead sommelier teams, manage substantial P&L budgets, and implement comprehensive training programs</li>
-      <li><span class="value-point-title">Revenue Impact:</span> Track record of increasing beverage revenue by 25%+ while maintaining exceptional service standards</li>
-      <li><span class="value-point-title">Wine Expertise:</span> Extensive knowledge of natural, organic, and traditional wine programs with sophisticated guest education capabilities</li>
-      <li><span class="value-point-title">Cultural Integration:</span> Experience adapting international cuisines for diverse markets with corresponding wine program development</li>
-      <li><span class="value-point-title">Modern Approach:</span> Data-driven inventory management combined with traditional hospitality values and guest-focused service</li>
-    </ul>
-  </div>
-</div>
-
-<div class="section">
-  <h2>Certifications & Education</h2>
-  <ul>
-    <li><strong>WSET Level 3 Advanced Certificate in Wine</strong> - Wine & Spirit Education Trust (DISTINCTION in Theory, Overall MERIT)</li>
-    <li><strong>Food Safety & Hospitality Management</strong> - Australian Industry Standards</li>
-
-  </ul>
-</div>
-
-<div class="section">
-  <h2>Languages & Nationalities</h2>
-  <ul>
-    <li><strong>Nationalities:</strong> Australian, American, Egyptian</li>
-    <li><strong>Languages:</strong> English (Fluent), Arabic (Fluent)</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>References</h2>
-  <p>Professional references available upon request</p>
-</div>
-
+            <div class="contact-section">
+                <h2 class="contact-title">CONTACT</h2>
+                <div class="contact-info">📱 0415-492-762</div>
+                <div class="contact-info">✉️ Khaled@sommixology.com</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
